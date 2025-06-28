@@ -1,41 +1,38 @@
 class MyQueue {
-    int *arr;
-    int size;
-    int front;
-    int rear;
 public:
+    stack <int> s1,s2;
     MyQueue() {
-        arr=new int[1000];
-        size=0;
-        front=-1;
-        rear=-1;
+        
     }
     
     void push(int x) {
-        if(size==0){
-            front=0;
-            rear=0;
+        int size=s1.size();
+
+        for(int i=0;i<size;i++){
+            s2.push(s1.top());
+            s1.pop();
         }
-        else{
-            rear++;
+
+        s1.push(x);
+
+        for(int i=0;i<size;i++){
+            s1.push(s2.top());
+            s2.pop();
         }
-        size++;
-        arr[rear]=x;
     }
     
     int pop() {
-        int x=arr[front];
-        front++;
-        size--;
+        int x=s1.top();
+        s1.pop();
         return x;
     }
     
     int peek() {
-        return arr[front];
+        return s1.top();
     }
     
     bool empty() {
-        if(size==0)
+        if(s1.size()==0)
             return true;
         return false;
     }
