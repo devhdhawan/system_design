@@ -9,14 +9,13 @@ public:
         int index=0;
         
         int start=0;
-        int end=k-1;
+     
         int fs=k;
 
         for(int i=0;i<len;i++){
             
             if(fs==0){
                 start++;
-                end++;
                 while(!dq.empty() and dq.front().second<start){
                     dq.pop_front();
                 }
