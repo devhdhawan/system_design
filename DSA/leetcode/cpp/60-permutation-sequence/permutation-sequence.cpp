@@ -11,7 +11,8 @@ public:
                
                 return ;
             }
-            
+            if(count==k)
+                return;
             sort(s.begin()+index,s.end());
 
             for(int i=index;i<size;i++){
