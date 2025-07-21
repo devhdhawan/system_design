@@ -3,12 +3,17 @@ package SystemDesign.LowLevelDesign.ParkingLot;
 import java.util.ArrayList;
 
 public class TwoWheelerParkingSpotManager extends ParkingSpotManager {
+    private static ArrayList<ParkingSpot> parkingSpotsList;
     public TwoWheelerParkingSpotManager() {
-        ArrayList<ParkingSpot> parkingSpotsList = new ArrayList<>();
+        
+        super(parkingSpotsList = new ArrayList<>());
+        
         for(int i=1;i<=10;i++){
             ParkingSpot spot = new ParkingSpot();
+
             VehicleType twoWheel = VehicleType.TwoWheeler;
             Vehicle vehicle = new Vehicle(); // Assuming Vehicle class exists
+            
             vehicle.setVehicleType(twoWheel); // Set the vehicle type to TwoWheeler
 
             spot.spotId = i;
@@ -16,6 +21,6 @@ public class TwoWheelerParkingSpotManager extends ParkingSpotManager {
             spot.vehicle=vehicle; // Assign a vehicle to the spot if needed
             parkingSpotsList.add(spot);
         }
-        super(parkingSpotsList);
+        // super(parkingSpotsList);
     }
 }

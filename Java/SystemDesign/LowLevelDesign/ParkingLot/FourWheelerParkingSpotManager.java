@@ -3,9 +3,10 @@ package SystemDesign.LowLevelDesign.ParkingLot;
 import java.util.ArrayList;
 
 public class FourWheelerParkingSpotManager extends ParkingSpotManager {
+    private static ArrayList<ParkingSpot> parkingSpotsList;
     public FourWheelerParkingSpotManager(){
-        ArrayList<ParkingSpot> parkingSpotsList=new ArrayList<>();
-
+        super(parkingSpotsList =new ArrayList<>());
+       
         for(int i=1;i<=10;i++){
             ParkingSpot spot = new ParkingSpot();
             VehicleType fourWheel = VehicleType.FourWheeler;
@@ -17,6 +18,6 @@ public class FourWheelerParkingSpotManager extends ParkingSpotManager {
             spot.vehicle=vehicle; // Assign a vehicle to the spot if needed
             parkingSpotsList.add(spot);
         }
-        super(parkingSpotsList);
+        // super(parkingSpotsList);
     }
 }

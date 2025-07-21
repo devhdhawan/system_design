@@ -1,16 +1,17 @@
 package OOPS.BasicOOPsPrinciple;
 
+
 // Inheritance is one of the four fundamental Object-Oriented Programming (OOP) principles.
 // It allows a new class (subclass or derived class) to inherit attributes and methods from an existing class (superclass or base class).
 // Purpose: Promotes code reusability and establishes a hierarchical relationship between classes.
 
-class Animal {
+class Animals {
     public void eats() {
         System.out.println("Animal eats");
     }
 }
 
-class Dog extends Animal {
+class Dog extends Animals {
     public void bark() {
         System.out.println("Dog barks");
     }

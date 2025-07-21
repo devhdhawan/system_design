@@ -8,16 +8,18 @@ public class ParkingSpotManager {
             this.parkingSpots = parkingSpots;
     }
 
-    public ParkingSpot findFreeSpace(){
-        ParkingSpot spot = null;
-        for(int i=0;i<parkingSpots.size();i++){
-            spot = parkingSpots.get(i);
-            if(spot.isAvailable){
-                return spot;
-            }
+    public ParkingSpot findFreeSpace(int choice){
+        ParkingSpot Spot=null;
+        if(choice==1){
+            DefaultFreeSpaceStrategy defaultStrategy=new DefaultFreeSpaceStrategy();
+            
+            Spot=defaultStrategy.findFreeSpace(parkingSpots);
+      
+        }else{
+            System.out.println("Invalid Strategy");
         }
-        spot=null;
-        return spot;
+        return Spot;
+        
     }
 
     public void parkVehicle(ParkingSpot spot){

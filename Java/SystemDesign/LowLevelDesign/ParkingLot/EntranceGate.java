@@ -4,14 +4,20 @@ import java.util.Scanner;
 
 public class EntranceGate {
     Ticket ticket;
+    Scanner scanner = new Scanner(System.in);
     public void processVehicleEntry(ParkingSpotManager manager){
-        Scanner scanner = new Scanner(System.in);
+    
+        System.out.println("Select the Strategy to Find Parking Space");
+        System.out.println("1. Default Strategy");
+        int choice=scanner.nextInt();
+        scanner.nextLine();
+        ParkingSpot spot=manager.findFreeSpace(choice);
 
-        ParkingSpot spot=manager.findFreeSpace();
         System.out.println("Please Enter the vehicle license plate number:");
         String licensePlate = scanner.nextLine();
         System.out.println(licensePlate + " is the license plate number of your vehicle.");
         spot.vehicle.setLicensePlate(licensePlate);
+
         manager.parkVehicle(spot);
 
         ticket = new Ticket();

@@ -3,5 +3,48 @@
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "configurations": []
+    "configurations": [
+        {
+            "type": "java",
+            "name": "file",
+            "request": "launch",
+            "mainClass": "SystemDesign.LowLevelDesign.ParkingLot.file",
+            "projectName": "system_design_b10ede2e"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "SystemDesign.LowLevelDesign.ParkingLot.Main",
+            "projectName": "system_design_b10ede2e"
+        },
+        {
+            "type": "java",
+            "name": "Polymorphism",
+            "request": "launch",
+            "mainClass": "OOPS.BasicOOPsPrinciple.Polymorphism",
+            "projectName": "system_design_b10ede2e"
+        },
+        {
+            "type": "java",
+            "name": "Inheritance",
+            "request": "launch",
+            "mainClass": "OOPS.BasicOOPsPrinciple.Inheritance",
+            "projectName": "system_design_b10ede2e"
+        },
+        {
+            "type": "java",
+            "name": "DequeExample",
+            "request": "launch",
+            "mainClass": "Collections.DequeExample",
+            "projectName": "system_design_b10ede2e"
+        },
+        {
+            "type": "java",
+            "name": "ArrayListExample",
+            "request": "launch",
+            "mainClass": "Collections.ArrayListExample",
+            "projectName": "system_design_b10ede2e"
+        }
+    ]
 }
