@@ -14,34 +14,24 @@
  * }
  */
 class Solution {
-    
-    public List<TreeNode> solve(TreeNode root,List<TreeNode> preOrder){
-        if(root==null)
-            return preOrder;
-        
-        preOrder.add(root);
-        preOrder=solve(root.left,preOrder);
-        preOrder=solve(root.right,preOrder);
-
-        return preOrder;
-    }
     public void flatten(TreeNode root) {
-        List<TreeNode> preOrder= new ArrayList<>();
+        TreeNode curr=root;
 
-        preOrder=solve(root,preOrder);
-        
-        boolean rootFlag=true;
-        TreeNode prevNode=new TreeNode();
-        for(TreeNode node:preOrder){
-            if(rootFlag){
-                rootFlag=false;
-                root=node;
-            }else{
-                prevNode.right=node;
-                prevNode.left=null;
+        while(curr!=null){
+
+            if(curr.left!=null){
+                TreeNode prev=curr.left;
+
+                while(prev.right!=null){
+                    prev=prev.right;
+                }
+
+                prev.right=curr.right;
+                curr.right=curr.left;
+                curr.left=null;
             }
-            prevNode=node;
+            curr=curr.right;
         }
-
+        
     }
 }
