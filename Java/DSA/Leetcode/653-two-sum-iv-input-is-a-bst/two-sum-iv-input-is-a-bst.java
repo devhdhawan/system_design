@@ -14,35 +14,76 @@
  * }
  */
 class Solution {
-    Map<Integer,Integer> mp=new HashMap<>();
-    public boolean findTarget(TreeNode root, int k) {
-        Solution obj=new Solution();
+    Stack<TreeNode> stNext=new Stack<>();
+    Stack<TreeNode> stBefore = new Stack<>();
+    Solution(){
 
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
+    }
+    Solution(TreeNode root){
+        TreeNode node=root;
+        this.stNext.push(root);
+        this.stBefore.push(root);
 
-        while(!queue.isEmpty()){
-            TreeNode node=queue.poll();
+        while(root.left!=null){
+            this.stNext.push(root.left);
+            root=root.left;
+        }
+        root=node;
+        while(root.right!=null){
+            this.stBefore.push(root.right);
+            root=root.right;
+        }
+    }
 
-            obj.mp.put(node.val,1);
-            if(node.left!=null){
-                queue.add(node.left);
-            }
+    public int next(){
+        TreeNode root=this.stNext.pop();
+        int val=root.val;
+        
+        if(root.right!=null){
+            this.stNext.push(root.right);
+            root=root.right;
 
-            if(node.right!=null){
-                queue.add(node.right);
+            while(root.left!=null){
+                this.stNext.push(root.left);
+                root=root.left;
             }
         }
 
-        for(Map.Entry<Integer,Integer> entry:obj.mp.entrySet()){
-            int value=k-entry.getKey();
-            int key=entry.getKey();
-            obj.mp.put(key,0);
-            if(obj.mp.containsKey(value)){
-                if(obj.mp.get(value)==1)
-                return true;
+        return val;
+    }
+
+    public  int before(){
+        TreeNode root=this.stBefore.pop();
+        int val=root.val;
+
+        if(root.left!=null){
+            this.stBefore.push(root.left);
+            root=root.left;
+
+            while(root.right!=null){
+                this.stBefore.push(root.right);
+                root=root.right;
             }
-            obj.mp.put(key,1);
+        }
+
+        return val;
+    }
+    public boolean findTarget(TreeNode root, int k) {
+        Solution obj = new Solution(root);
+
+        int left=obj.before();
+        int right=obj.next();
+
+        while(!obj.stNext.isEmpty() && !obj.stBefore.isEmpty()){
+                
+
+                if(left!=right && (left+right)==k)
+                    return true;
+                else if((left+right)>k){
+                    left=obj.before();
+                }else{
+                    right=obj.next();
+                }
         }
         return false;
     }
