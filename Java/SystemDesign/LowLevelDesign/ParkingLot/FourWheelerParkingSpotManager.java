@@ -16,6 +16,7 @@ public class FourWheelerParkingSpotManager extends ParkingSpotManager {
             spot.spotId = i;
             spot.isAvailable = true; // Ensure the spot is available initially
             spot.vehicle=vehicle; // Assign a vehicle to the spot if needed
+            spot.rate = 50; // Set a default rate for four-wheeler parking
             parkingSpotsList.add(spot);
         }
         // super(parkingSpotsList);

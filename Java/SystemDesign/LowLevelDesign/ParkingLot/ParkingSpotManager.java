@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class ParkingSpotManager {
     ArrayList<ParkingSpot> parkingSpots;
+    
 
     public ParkingSpotManager(ArrayList<ParkingSpot> parkingSpots) {
             this.parkingSpots = parkingSpots;
@@ -23,12 +24,12 @@ public class ParkingSpotManager {
     }
 
     public void parkVehicle(ParkingSpot spot){
-        spot.parkVehicle(spot.vehicle,spot.spotId);
+        spot.parkVehicle(spot.vehicle,spot.spotId, spot.rate);
         System.out.println("Vehicle with license plate " + spot.vehicle.getLicensePlate() + " has been parked at spot ID " + spot.spotId);
     }
 
     public void unparkVehicle(ParkingSpot spot){
-        spot.unparkVehicle();
+        spot.unpark();
         System.out.println("Vehicle with license plate " + spot.vehicle.getLicensePlate() + " has been unparked from spot ID " + spot.spotId);
     }
 }

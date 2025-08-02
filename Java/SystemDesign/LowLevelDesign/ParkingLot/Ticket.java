@@ -1,12 +1,17 @@
 package SystemDesign.LowLevelDesign.ParkingLot;
 
+import java.time.LocalDateTime;
+import java.util.Random;
+
 public class Ticket {
-    String entryTime;
-    Vehicle vehicle;
-    int spotId;
+    public LocalDateTime entryTime;
+    public Vehicle vehicle;
+    public int spotId;
 
     public void generateTicket(String entryTime, ParkingSpot spot) {
-        this.entryTime = entryTime;
+        Random random=new Random();
+        int randomInt=random.nextInt(10)+1;
+        this.entryTime = LocalDateTime.now().minusHours(randomInt);
         this.vehicle = spot.vehicle;
         this.spotId = spot.spotId;
         this.displayTicket();
