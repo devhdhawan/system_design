@@ -114,7 +114,7 @@ public class BST {
         }else{
             setProp(node,value);
         }
-        }
+        
     }
     public static void main(String[] args){
         BST obj=new BST();
