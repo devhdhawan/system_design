@@ -49,7 +49,6 @@ public class Codec {
    
     public TreeNode deserialize(String data) {
         Queue<TreeNode> queue = new LinkedList<>();
-        List<TreeNode> list= new ArrayList<>();
         TreeNode root=null;
         String[] nodes=data.split(" ");
 
@@ -86,31 +85,7 @@ public class Codec {
         }
 
         
-        // for(int i=0;i<list.size();i++){
-        //     TreeNode node=list.get(i);
-
-        //     if(i==0){
-        //         root=node;
-        //         queue.add(root);
-        //     }else{
-        //         TreeNode frontNode=queue.peek();
-
-        //         if(leftTurn==true){
-        //             frontNode.left=node;
-        //             rightTurn=true;
-        //             leftTurn=false;
-        //         }else if(rightTurn==true){
-        //             frontNode.right=node;
-        //             queue.poll();
-        //             rightTurn=false;
-        //             leftTurn=true;
-        //         }
-                
-        //         if(node!=null)
-        //             queue.add(node);
-                
-        //     }
-        // }
+        
         return root;
     }
 }
