@@ -50,9 +50,11 @@ public class Codec {
     public TreeNode deserialize(String data) {
         Queue<TreeNode> queue = new LinkedList<>();
         List<TreeNode> list= new ArrayList<>();
-        TreeNode root=new TreeNode();
+        TreeNode root=null;
         String[] nodes=data.split(" ");
 
+        boolean leftTurn=true;
+        boolean rightTurn=false;
         for(String node:nodes){
             TreeNode nod;
             
@@ -62,36 +64,53 @@ public class Codec {
             }else{
                 nod=null;
             }
-            list.add(nod);
-        }
 
-        boolean leftTurn=true;
-        boolean rightTurn=false;
-        for(int i=0;i<list.size();i++){
-            TreeNode node=list.get(i);
-
-            if(i==0){
-                root=node;
-                queue.add(root);
-            }else{
+            if(root==null)
+                root=nod;
+            else{
                 TreeNode frontNode=queue.peek();
-
                 if(leftTurn==true){
-                    frontNode.left=node;
+                    frontNode.left=nod;
                     rightTurn=true;
                     leftTurn=false;
-                }else if(rightTurn==true){
-                    frontNode.right=node;
-                    queue.poll();
+                }
+                else if(rightTurn==true){
+                    frontNode.right=nod;
                     rightTurn=false;
                     leftTurn=true;
+                    queue.poll();
                 }
-                
-                if(node!=null)
-                    queue.add(node);
-                
             }
+            if(nod!=null)
+                queue.add(nod);
         }
+
+        
+        // for(int i=0;i<list.size();i++){
+        //     TreeNode node=list.get(i);
+
+        //     if(i==0){
+        //         root=node;
+        //         queue.add(root);
+        //     }else{
+        //         TreeNode frontNode=queue.peek();
+
+        //         if(leftTurn==true){
+        //             frontNode.left=node;
+        //             rightTurn=true;
+        //             leftTurn=false;
+        //         }else if(rightTurn==true){
+        //             frontNode.right=node;
+        //             queue.poll();
+        //             rightTurn=false;
+        //             leftTurn=true;
+        //         }
+                
+        //         if(node!=null)
+        //             queue.add(node);
+                
+        //     }
+        // }
         return root;
     }
 }
