@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AvlTreeImplementation",
+            "request": "launch",
+            "mainClass": "DSA.BinaryTree.AvlTree.AvlTreeImplementation",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "HashMapExample2",
             "request": "launch",
             "mainClass": "Collections.HashMapExample2",
