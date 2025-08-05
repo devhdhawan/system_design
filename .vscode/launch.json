@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "AvlTreeImplementation",
+            "request": "launch",
+            "mainClass": "DSA.BinaryTree.AvlTree.AvlTreeImplementation",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
+            "name": "HashMapExample2",
+            "request": "launch",
+            "mainClass": "Collections.HashMapExample2",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
+            "name": "BST",
+            "request": "launch",
+            "mainClass": "DSA.BinaryTree.BinarySearchTree.BST",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "file",
             "request": "launch",
             "mainClass": "SystemDesign.LowLevelDesign.ParkingLot.file",

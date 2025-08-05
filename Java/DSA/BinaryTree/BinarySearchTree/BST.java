@@ -18,6 +18,8 @@ public class BST {
     private TreeNode root;
 
     public TreeNode insert(int value){
+        // Insert a new node with the given value into the BST
+        if(this.root==null){
             if(root==null){
                 TreeNode node=new TreeNode(value);
                 this.root=node;
@@ -42,10 +44,12 @@ public class BST {
                     }
                 }
             }
+        }
         return this.root;
     }
 
     public void inorder(TreeNode root){
+        // Traverse the left subtree, visit the node, and then traverse the right subtree
         if(root==null)
             return;
 
@@ -55,6 +59,7 @@ public class BST {
     }
 
     public void preorder(TreeNode root){
+        // Visit the node, traverse the left subtree, and then traverse the right subtree
         if(root==null)
             return;
 
@@ -64,6 +69,7 @@ public class BST {
     }
 
     public void postorder(TreeNode root){
+        // Traverse the left subtree, traverse the right subtree, and then visit the node
         if(root==null)
             return;
 
@@ -72,25 +78,18 @@ public class BST {
         System.out.print(root.value+" ");
     }
 
-    public TreeNode findNode(TreeNode root,int value){
-        if(root==null)
+    public TreeNode inorderSuccessor(TreeNode node){
+        // Find the minimum value node in the right subtree
+        if(node==null)
             return null;
-        
-        if(root.value==value)
-            return root;
-        
-        TreeNode left=findNode(root.left,value);
-        TreeNode right=findNode(root.right,value);
 
-        if(left!=null)
-            return left;
-        if(right!=null)
-            return right;
-        
-        return null;
-        
+        while(node.left!=null){
+            node=node.left;
+        }
+        return node;
     }
-    public TreeNode setProp(TreeNode node,int value){
+    
+    public TreeNode deleteNode(TreeNode root,int value){
         if(root==null)
             return null;
         if(node.right!=null && node.right.value>value){
@@ -105,7 +104,6 @@ public class BST {
                 node.value=v;
                 setProp(node.left,value);
             }
-        return node;
     }
     public void deleteNode(TreeNode root,int value){
         TreeNode node=findNode(root, value);
@@ -113,13 +111,31 @@ public class BST {
         if(node==null){
             System.out.println("No Matching Key Found");
         }else{
-            setProp(node,value);
+            // Node with only one child or no child
+            if(root.left==null)
+                return root.right;
+            if(root.right==null)
+                return root.left;
+            
+            TreeNode minNode=root.right;
+            TreeNode inorderSuccessor=inorderSuccessor(minNode);
+
+            root.value=inorderSuccessor.value;
+            root.right=deleteNode(root.right, inorderSuccessor.value);
         }
-        
+        return root;
+    }
+
+    public TreeNode updateNode(int oldValue, int newValue) {
+        // First delete the node with oldValue and then insert the newValue
+        TreeNode node = deleteNode(root, oldValue);
+        node= insert(newValue);
+        return node;
     }
     public static void main(String[] args){
         BST obj=new BST();
         TreeNode root;
+        // Inserting nodes
         root=obj.insert(30);
         root=obj.insert(20);
         root=obj.insert(45);
@@ -130,12 +146,23 @@ public class BST {
 
         System.out.print("Inorder:");
         obj.inorder(root);
-        System.out.println("");
-        System.out.print("Preorder:");
-        obj.preorder(root);
-        System.out.println("");
-        System.out.print("Postorder:");
-        obj.postorder(root);
+        System.out.println();
+
+        // Deleting a node
+        int deleteValue = 20;
+        System.out.println("Deleting node with value: " + deleteValue);
+        root=obj.deleteNode(root, 20);
+        System.out.print("Inorder after deletion:");
+        obj.inorder(root);
+
+        // Updating a node
+        int oldValue = 42;
+        int newValue = 50;
+        System.out.print("\nUpdating node with value " + oldValue + " to "  + newValue);
+        root=obj.updateNode(42, 50);
+        System.out.print("\nInorder after updating:");
+        obj.inorder(root);
+        System.out.println();
 
 
     }

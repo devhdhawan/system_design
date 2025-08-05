@@ -1,0 +1,96 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+public class Codec {
+
+    // Encodes a tree to a single string.
+    public String serialize(TreeNode root) {
+        String data="";
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        if(root!=null){
+            queue.add(root);
+            data=data+root.val+" ";
+        }
+
+        while(!queue.isEmpty()){
+            TreeNode node = queue.poll();
+
+            if(node!=null)
+                
+
+            if(node.left!=null){
+                queue.add(node.left);
+                data=data+node.left.val+" ";
+            }
+            
+            if(node.left==null)
+                data=data+"N"+" ";
+            
+            if(node.right!=null){
+                queue.add(node.right);
+                data=data+node.right.val+" ";
+            }
+            
+            if(node.right==null)
+                data=data+"N"+" ";
+        }
+        
+        return data;
+    }
+
+    // Decodes your encoded data to tree.
+   
+    public TreeNode deserialize(String data) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        TreeNode root=null;
+        String[] nodes=data.split(" ");
+
+        boolean leftTurn=true;
+        boolean rightTurn=false;
+        for(String node:nodes){
+            TreeNode nod;
+            
+            if(node.equals("N")==false && node.equals("")==false){
+                int val=Integer.parseInt(node);
+                nod=new TreeNode(val);
+            }else{
+                nod=null;
+            }
+
+            if(root==null)
+                root=nod;
+            else{
+                TreeNode frontNode=queue.peek();
+                if(leftTurn==true){
+                    frontNode.left=nod;
+                    rightTurn=true;
+                    leftTurn=false;
+                }
+                else if(rightTurn==true){
+                    frontNode.right=nod;
+                    rightTurn=false;
+                    leftTurn=true;
+                    queue.poll();
+                }
+            }
+            if(nod!=null)
+                queue.add(nod);
+        }
+
+        
+        
+        return root;
+    }
+}
+
+// Your Codec object will be instantiated and called as such:
+// Codec ser = new Codec();
+// Codec deser = new Codec();
+// TreeNode ans = deser.deserialize(ser.serialize(root));

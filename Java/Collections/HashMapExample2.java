@@ -17,11 +17,11 @@ public class HashMapExample2 {
         lis.add(11);
         lis.add(21);
 
-       mp.computeIfAbsent(1, k -> new ArrayList<>()).add(11);
-       mp.computeIfAbsent(3,k->new ArrayList<>()).add(21);
-       mp.computeIfAbsent(3,k->new ArrayList<>()).add(54);
-       mp.computeIfAbsent(4,k->new ArrayList<>()).add(42);
-       mp.computeIfAbsent(2,k->new ArrayList<>()).add(93);
+       mp.computeIfAbsent(1, _ -> new ArrayList<>()).add(11);
+       mp.computeIfAbsent(3, _ ->new ArrayList<>()).add(21);
+       mp.computeIfAbsent(3, _ ->new ArrayList<>()).add(54);
+       mp.computeIfAbsent(4, _ ->new ArrayList<>()).add(42);
+       mp.computeIfAbsent(2, _ ->new ArrayList<>()).add(93);
        System.out.println(mp);
        
     
@@ -36,9 +36,9 @@ public class HashMapExample2 {
 
         
         Map<Integer,Integer> mp2=new HashMap<>();
-        mp2.computeIfAbsent(1,k->10);
-        mp2.computeIfAbsent(1,k->20);
-        mp2.computeIfAbsent(3,k->30);
+        mp2.computeIfAbsent(1,_->10);
+        mp2.computeIfAbsent(1,_->20);
+        mp2.computeIfAbsent(3,_->30);
 
         System.out.println(mp2);
         
