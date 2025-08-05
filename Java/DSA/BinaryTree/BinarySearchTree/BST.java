@@ -105,6 +105,7 @@ public class BST {
                 node.value=v;
                 setProp(node.left,value);
             }
+        return node;
     }
     public void deleteNode(TreeNode root,int value){
         TreeNode node=findNode(root, value);
