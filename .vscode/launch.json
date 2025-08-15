@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DisjointSet",
+            "request": "launch",
+            "mainClass": "DSA.GraphImplementation.DisjointSet",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "AvlTreeImplementation",
             "request": "launch",
             "mainClass": "DSA.BinaryTree.AvlTree.AvlTreeImplementation",
