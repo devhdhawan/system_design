@@ -1,5 +1,10 @@
 package DSA.GraphImplementation;
 
+// Disjoint Set (Union-Find) data structure implementation
+// This implementation supports path compression and union by rank.
+// Time Complexity: O(α(n)) for find and union operations, where α is the inverse Ackermann function
+// Space Complexity: O(n) where n is the number of elements
+
 public class DisjointSet {
     private int[] parent;
     private int[] rank;
