@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LongestIncreasingSubsequence",
+            "request": "launch",
+            "mainClass": "DSA.DP.LongestIncreasingSubsequence",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "MaxProductSubarray",
             "request": "launch",
             "mainClass": "DSA.DP.MaxProductSubarray",
