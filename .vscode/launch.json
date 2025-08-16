@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "KnapsackProblem",
+            "request": "launch",
+            "mainClass": "DSA.DP.KnapsackProblem",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "LongestCommonSubsequence",
             "request": "launch",
             "mainClass": "DSA.DP.LongestCommonSubsequence",
