@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MaxProductSubarray",
+            "request": "launch",
+            "mainClass": "DSA.DP.MaxProductSubarray",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "BFSGraph",
             "request": "launch",
             "mainClass": "DSA.GraphImplementation.BFSGraph",
