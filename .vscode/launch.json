@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BFSGraph",
+            "request": "launch",
+            "mainClass": "DSA.GraphImplementation.BFSGraph",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "FloydWarshallAlgorithm",
             "request": "launch",
             "mainClass": "DSA.GraphImplementation.FloydWarshallAlgorithm",
