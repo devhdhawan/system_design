@@ -18,6 +18,10 @@ public class TreeSetExample {
 
         // Print the TreeSet
         System.out.println("TreeSet: " + treeset);
+        
+        // Remove the element from TreeSet
+        treeset.remove("Banana");
+        System.out.println("TreeSet:"+treeset);
 
         // Access elements using a for-each loop
         for (String fruit : treeset) {

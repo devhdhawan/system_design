@@ -6,6 +6,7 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< Updated upstream
             "name": "EditDistance",
             "request": "launch",
             "mainClass": "DSA.DP.EditDistance",
@@ -73,6 +74,33 @@
             "request": "launch",
             "mainClass": "DSA.GraphImplementation.DisjointSet",
             "projectName": "system_design_a113cff7"
+=======
+            "name": "TreeSetComparatorExample",
+            "request": "launch",
+            "mainClass": "Collections.TreeSetComparatorExample",
+            "projectName": "system_design_b67c3ad"
+        },
+        {
+            "type": "java",
+            "name": "TreeSetExampleContinue",
+            "request": "launch",
+            "mainClass": "Collections.TreeSetExampleContinue",
+            "projectName": "system_design_b67c3ad"
+        },
+        {
+            "type": "java",
+            "name": "TreeSetExample",
+            "request": "launch",
+            "mainClass": "Collections.TreeSetExample",
+            "projectName": "system_design_b67c3ad"
+        },
+        {
+            "type": "java",
+            "name": "MinHeap",
+            "request": "launch",
+            "mainClass": "Collections.MinHeap",
+            "projectName": "system_design_b67c3ad"
+>>>>>>> Stashed changes
         },
         {
             "type": "java",

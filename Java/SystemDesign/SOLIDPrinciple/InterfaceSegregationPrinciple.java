@@ -1,6 +1,7 @@
 package SystemDesign.SOLIDPrinciple;
 
-// The Interface Segregation Principle states that no client should be forced to depend on methods it does not use.
+// The Interface Segregation Principle states that no client should be forced to depend on methods it does
+// not use.
 
 interface Printer {
     void print();
