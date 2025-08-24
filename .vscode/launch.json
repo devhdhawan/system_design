@@ -6,6 +6,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "SystemDesign.LowLevelDesign.LibraryMangement.Main",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
+            "name": "WordCount",
+            "request": "launch",
+            "mainClass": "DSA.TrieTmp.WordCount",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
+            "name": "prefixCount",
+            "request": "launch",
+            "mainClass": "DSA.TrieTmp.prefixCount",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "DSA.TrieTmp.Main",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
+            "name": "TrieTwo",
+            "request": "launch",
+            "mainClass": "DSA.Trie.TrieTwo",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
+            "name": "Trie",
+            "request": "launch",
+            "mainClass": "DSA.Trie.Trie",
+            "projectName": "system_design_a113cff7"
+        },
+        {
+            "type": "java",
             "name": "EditDistance",
             "request": "launch",
             "mainClass": "DSA.DP.EditDistance",
