@@ -3,14 +3,7 @@ package DSA.GraphImplementation;
 import java.util.*;
 
 public class DFSGraph {
-    public static ArrayList<Integer> dfs(ArrayList<ArrayList<Integer> > adj){
-        boolean[] visited = new boolean[adj.size()];
-        ArrayList<Integer> res = new ArrayList<Integer>();
-
-        dfsRec(adj,visited,0,res);
-        
-        return res;
-    }
+    
 
     private static void dfsRec(ArrayList<ArrayList<Integer>> adj, boolean[] visited, int s, ArrayList<Integer> res) {
         
@@ -22,6 +15,18 @@ public class DFSGraph {
                     dfsRec(adj,visited,dist,res);
                 }
             }
+    }
+    
+    public static ArrayList<Integer> dfs(ArrayList<ArrayList<Integer> > adj){
+        boolean[] visited = new boolean[adj.size()];
+        ArrayList<Integer> res = new ArrayList<Integer>();
+
+        for(int i=0;i<adj.size();i++){
+            if(!visited[i])
+                dfsRec(adj,visited,0,res);
+        }
+        
+        return res;
     }
     public static void addEdge(ArrayList<ArrayList<Integer>> adj, int source,int dist){
             adj.get(source).add(dist);

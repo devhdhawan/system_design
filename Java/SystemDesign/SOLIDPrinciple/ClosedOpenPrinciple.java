@@ -1,7 +1,9 @@
 package SystemDesign.SOLIDPrinciple;
 
-// The Closed-Open Principle states that software entities should be open for extension but closed for modification.
-// This means that we can add new functionality without changing existing code, which helps in maintaining the stability of the system.
+// The Closed-Open Principle states that software entities should be open for extension but closed for 
+//modification.
+// This means that we can add new functionality without changing existing code, which helps in maintaining 
+//the stability of the system.
 // In this example, we define an abstract class Shape and its subclasses Circle and Rectangle.
 
 abstract class Shape {
