@@ -30,6 +30,10 @@ class TrieNode {
         this.isEnd=true;
     }
 
+    public boolean getEnd(){
+        return this.isEnd;
+    }
+
     public void increasePrefixCount(){
         prefixCount++;
     }
@@ -45,4 +49,6 @@ class TrieNode {
     public void decreaseWordCount(){
         wordCount--;
     }
+
+    
 }

@@ -18,11 +18,13 @@ public class Trie {
             }else{
                 node = node.getChar(ch);
             }
-        
+
             node.increasePrefixCount();
         }
         node.setEnd();
         node.increaseWordCount();
+
+      
     }
 
     public boolean search(String word){
